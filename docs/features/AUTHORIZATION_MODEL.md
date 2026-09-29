@@ -64,6 +64,7 @@ These functions only read state and never panic on missing auth.
 ## Error Codes
 
 Authorization failures surface as stable error codes (see `src/errors.rs`):
-- `NotInitialized` (101) — contract not yet initialized
-- `Unauthorized` (102) — caller is not the admin
-- `AttestorNotRegistered` (104) — attestor address not in registry
+- `NotInitialized` (26) — contract not yet initialized
+- `UnauthorizedAttestor` (4) — caller is not an authorized attestor. There is no bare `Unauthorized` variant.
+- `AttestorNotRegistered` (3) — attestor address not in registry
+- `UnauthorizedProposeAdmin` (58) — caller is not the current admin
